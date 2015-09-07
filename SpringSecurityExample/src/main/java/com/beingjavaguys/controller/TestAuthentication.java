@@ -46,12 +46,17 @@ public class TestAuthentication implements Authentication {
 	 * @param details Details
 	 * @param grantedAuthorities Granted Authorities
 	 */
-	public TestAuthentication( String username, String password, AuthenticationDetails details, GrantedAuthority[] grantedAuthorities ) {
-		this.username = username;
+	public TestAuthentication( String username, String password, AuthenticationDetails details, GrantedAuthority[] grantedAuthorities ) 
+	{
+		
+		if(this.password=="1234")
+		{
 		this.password = password;
 		this.details = details;
 		this.isAuthenticated = true;
 		this.grantedAuthorityArray = grantedAuthorities;
+		}else
+			this.isAuthenticated=false;
 	}
 	
 	 
